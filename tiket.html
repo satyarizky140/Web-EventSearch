@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* General styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        /* Content box styles */
+        #konten {
+            border: 1px black solid;
+            border-radius: 10px;
+            width: 450px;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 50px;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        /* Heading styles */
+        #kepala {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+            margin-top: 50px;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        h3 {
+            margin-top: 0;
+            color: #333;
+        }
+
+        h4 {
+            background-color: #ff4d4d;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            text-align: center;
+            margin-top: 20px;
+            animation: slideIn 0.5s ease-in-out;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideIn {
+            0% {
+                transform: translateX(-20px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        .berhasil{
+            background-color: greenyellow;
+            color: black;
+            padding: 10px;
+            border-radius: 5px;
+            text-align: center;
+            margin-top: 20px;
+            animation: slideIn 0.5s ease-in-out;
+        }
+    </style>
+</head>
+<body>
+    <div id="kepala">BUKTI DAFTAR</div>
+    <div id="konten">
+    </div>
+
+    <h4 class="berhasil">Anda sudah berhasil mendaftar</h4>
+
+    <script>
+        let urlParams = new URLSearchParams(window.location.search);
+        let nama = urlParams.get("nama");
+        let institusi = urlParams.get("institusi");
+        let email = urlParams.get("email1");
+        let kota = urlParams.get("kota");
+        let acara = urlParams.get("nama_acara");
+        let konten = document.getElementById("konten");
+        let harga = urlParams.get("harga");
+
+        if (null){
+            nama = "-";
+            institusi = "-";
+        }
+        
+
+        konten.innerHTML = `
+            <h3>Nama: ${nama}</h3>
+            <h3>Institusi: ${institusi}</h3>
+            <h3>Email: ${email}</h3>
+            <h3>Kota: ${kota}</h3>
+            <h3>Acara: ${acara}</h3>
+            <h3>Biaya Pendaftaran: ${harga}</h3>
+            <h3>Tempat: Online Zoom Meeting</h3>
+        `;
+
+        let para = document.createElement("h4");
+        para.innerHTML = "Peserta diharapkan hadir 15 menit sebelum acara dimulai, dan jangan lupa screenshoot halaman ini";
+        konten.appendChild(para);
+    </script>
+</body>
+</html>

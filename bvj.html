@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="form.css">
+</head>
+
+<style>
+    .konfirm {
+        border: 1px black solid;
+        border-radius: 10px;
+        width: 450px;
+        padding: 20px;
+        background-color: white;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        margin-top: 50px;
+        animation: fadeIn 0.5s ease-in-out;
+        margin-left: 45px;
+    }
+</style>
+
+<header>
+    <div class="kepala">
+        <div class="logo">
+            <a href="Depan.html">
+                <img class="pn" src="logo.png" alt="">
+            </a>
+        </div>
+        <nav class="button">
+            <ul>
+                <li><a href="buat_event.html">Buat Event</a></li>
+                <li class="event"><a href="index.html">Event</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<body>
+    <main>
+        <section id="bagian1" class="bagian_1">
+            <table class="T1">
+                <tr>
+                    <td class="info">
+                        <h2 class="event-title">BVJ CUP</h2>
+
+                        <div class="imgfik">
+                            <img class="fikfair" src="BVJ.jpeg" alt="">
+                        </div>
+
+                        <div class="event-details">
+                            <ul class="navinfo">
+                                <li id="info1" onclick="detail()" class="active">Deskripsi</li>
+                                <li id="info2" onclick="daftar()">Pendaftaran</li>
+                            </ul>
+
+                            <article id="art1" class="description">
+                                <h4>detail kegiatan :</h4>
+                                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laborum veritatis perferendis ipsum pariatur. Maxime, qui, fugit unde alias laboriosam nemo harum a omnis deserunt natus porro nisi. Sequi, ut at.</p>
+                                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestias, assumenda quaerat aliquid itaque nulla aliquam dolores autem vel voluptatem, corrupti at voluptas. Id, labore illum? Praesentium quas numquam atque minima.</p>
+                                <p>Tunggu apa lagi? Segera daftarkan diri pada web ini!!!</p>
+
+                                <div class="event-info">
+                                    <h4>Jenis Kegiatan :</h4>
+                                    <p>Lomba Non-Akademik (Basket)</p>
+                                </div>
+
+                                <div class="event-info">
+                                    <h4>Tujuan kegiatan:</h4>
+                                    <p>Mencerdaskan Kehidupan Bangsa</p>
+                                </div>
+
+                                <div class="event-info">
+                                    <h4>Persyaratan :</h4>
+                                    <ol class="syarat">
+                                        <li>Mahasiswa Aktif</li>
+                                        <li>Semua Jurusan</li>
+                                        <li>Membayar biaya pendaftaran sebesar 120000/tim</li>
+                                        <li>Setiap universitas hanya boleh mengirim maks 2 tim</li>
+                                    </ol>
+                                    <p>Pendaftaran hanya perlu dilakukan 1x oleh Koordinator. Jika 1 kampus mengirimkan lebih dari 1 tim, maka biaya pendaftaran akan disesuaika</p>
+                                </div>
+                            </article>
+
+                            <div id="art2" class="registration-form" style="display:none">
+                                <h3>FORM PENDAFTARAN</h3>
+                                <p>*Isi data dibawah ini dengan benar, data ini digunakan untuk keperluan e-certificate</p>
+                                <div class="form-container" id="daftar">
+                                    <div class="bg1">
+                                        <table>
+                                            <tr>
+                                                <td class="input"><span>*</span><b>Nama</b></td>
+                                                <td class="input"><input type="text" id="input_nama"></td>
+                                            </tr>
+
+                                            <tr>
+                                                <td class="input"><b>Institusi</b></td>
+                                                <td class="input"><input type="text" id="institusi"></td>
+                                            </tr>
+
+                                            <tr>
+                                                <td class="input"><span>*</span><b>Email</b></td>
+                                                <td class="input"><input type="text" id="email_1"></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="input">
+                                                    <div>
+                                                        <span>*</span><b>Re-type Email</b>
+                                                    </div>
+                                                </td>
+                                                <td class="input">
+                                                    <input type="text" id="email_2">
+                                                    <p class="email-note"><i>enter an address where we can send an e-mail confirming your order</i></p>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                        
+                                    <div class="bg2">
+                                        <table>
+                                            <tr>
+                                                <td class="input"><span>*</span><b>Metode Pembayaran</b></td>
+                                                <td class="input">
+                                                    <select name="" id="bayar">
+                                                        <option value="pilih">Pilih</option>
+                                                        <option value="bank">Transfer</option>
+                                                        <option value="gopay">Gopay</option>
+                                                        <option value="ovo">Ovo</option>
+                                                    </select>
+                                                </td>
+                                            </tr>
+                                   
+                                            <tr>
+                                                <td class="input"><b>Jumlah tim yang didaftarkan</b></td>
+                                                <td class="input"><input type="text" id="jml" oninput="biaya()"></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="input"><b>Biaya</b></td>
+                                                <td class="input"><input type="number" id="harga" value="0" disabled></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="input"><span>*</span><b>Menyetujui Persyaratan?</b></td>
+                                                <td class="input">
+                                                    <label class="rad" for="" id="label">
+                                                        <input class="rd" class="in2" type="radio"  name="approval" value="y">Ya
+                                                        <input class="rd" type="radio" name="approval" id="no" checked>Tidak
+                                                    </label>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                                
+                                <div class="tim" id="tim" style="display: none;">
+                                    <div class="bg2">
+                                        <h3>DATA TIM</h3>
+                                        <table>
+                                            <tr>
+                                                <td class="input"><span>*</span><b>Nama Pelatih </b></td>
+                                                <td class="input"><input type="text" id="pelatih"></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="input"><span>*</span><b>Kapten/Ketua Tim</b></td>
+                                                <td class="input"><input type="text" id="ketua"></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="input"><span>*</span><b>Kategori Tim</td>
+                                                <td class="input">
+                                                    <select name="" id="kategori">
+                                                        <option value="putra">Putra</option>
+                                                        <option value="putri">Putri</option>
+                                                    </select>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                                <button class="kirim" id="next" onclick="selanjutnya()">next</button>
+                                <button class="kirim" id="tombol" onclick="coba()" style="display: none;">Submit</button>
+                            </div>
+                        </div>
+                    </td>   
+                </tr>
+            </table>
+        </section>
+    </main>
+</body>
+
+<script>
+    var nama;
+    var institusi;
+    var email1;
+    var email2;
+    var bayar;
+    var setuju;
+    var pelatih;
+    var ketua;
+    var pelatih1;
+    var ketua1;
+    var kategori = document.getElementById("kategori").value;
+    var tim;
+    var containertim;
+    var status;
+
+    function detail(){
+        const bagian1 = document.getElementById('art1');
+        const bagian2 = document.getElementById('art2');
+        const nav1 = document.getElementById('info1');
+        const nav2 = document.getElementById('info2');
+        bagian1.style.display="block";
+        bagian2.style.display="none";
+        nav1.style.backgroundColor="grey";
+        nav2.style.backgroundColor= "blue";
+    }
+
+    function daftar(){
+        const nav1 = document.getElementById('info1');
+        const nav2 = document.getElementById('info2');
+        const bagian1 = document.getElementById('art1');
+        const bagian2 = document.getElementById('art2');
+        bagian1.style.display="none";
+        bagian2.style.display="block";
+        nav1.style.backgroundColor="blue";
+        nav2.style.backgroundColor= "grey";
+    }
+
+    function selanjutnya(){
+        nama = document.getElementById("input_nama").value;
+        email1 = document.getElementById("email_1").value;
+        email2 = document.getElementById("email_2").value;
+        setuju = document.getElementById("no");
+        bayar = document.getElementById("bayar").value;
+        tim = document.getElementById('jml').value;
+        if (nama === '' || email1 ==='' || bayar === 'pilih' || tim == ''){
+            alert("tanda * wajib diisi");
+        }
+        
+        else{
+            if (email1 != email2){
+                alert("email harus sama!");
+            }
+
+            else{
+                if (tim > 2){
+                    alert("Jumlah maks hanya 2 tim");
+                }
+
+                else{
+                    if (setuju.checked){
+                    alert("anda harus menyetujui persyaratan");
+                }
+
+                    else if (document.getElementById("tim").style.display === "none"){
+                        alert("PENDAFTARAN BERHASIL!");
+                        activ();
+                }
+
+                }
+            }
+        }
+    }
+
+    function activ() {
+        containertim = document.getElementById("tim");
+
+        if (tim < 2){
+            document.getElementById("daftar").style.display="none";
+            containertim.style.display = "block";
+        }
+
+        else if(tim == 2){
+            document.getElementById("daftar").style.display="none";
+            containertim.style.display = "block";
+            for (let i=0; i<1; i++) {
+                var newElement = document.createElement("div");
+                newElement.innerHTML = 
+                `<div class="bg2">
+                    <h3>DATA TIM</h3>
+                    <table>
+                        <tr>
+                            <td class="input"><span>*</span><b>Nama Pelatih </b></td>
+                            <td class="input"><input type="text" id="pelatih1"></td>
+                        </tr>
+                        <tr>
+                            <td class="input"><span>*</span><b>Kapten/Ketua Tim</b></td>
+                            <td class="input"><input type="text" id="ketua1"></td>
+                        </tr>
+                        <tr>
+                            <td class="input"><span>*</span><b>Kategori Tim</td>
+                            <td class="input">
+                                <select name="" id="kategori1">
+                                    <option value="putra">Putra</option>
+                                    <option value="putri">Putri</option>
+                                </select>
+                        </tr>
+                    </table>
+                </div>`
+                containertim.appendChild(newElement);
+            }
+        }
+        document.getElementById("tombol").style.display="block";
+        document.getElementById("next").style.display = "none";
+    }
+
+    var harga;
+
+    function biaya() { //menghitung biaya pendaftaran
+        tim = document.getElementById('jml').value;
+        harga = parseInt(tim) * 120000;
+        document.getElementById('harga').value = harga;
+        }
+
+    function coba(){
+        var nama_acara = "OPENING CEREMONY FIKFAIR";
+        pelatih = document.getElementById('pelatih').value;
+        institusi = document.getElementById("institusi").value;
+        ketua = document.getElementById('ketua').value;
+        harga = harga;
+        containertim = document.getElementById("tim"); // Dapatkan referensi ke elemen dengan ID "tim"
+
+        if(tim == 1){
+            if (pelatih == '' || ketua == ''){
+                alert("tanda * wajib diisi");
+            }
+            else{
+                alert("PENDAFTARAN BERHASIL!");
+                document.getElementById("tombol").style.display="none";
+        
+                // Tambahkan konten HTML ke dalam containertim
+                containertim.innerHTML = `
+                <div class="konfirm">
+                    <h2>KONFIRMASI PEMBAYARAN</h2>
+                    <h3 id="countdown"></h3>
+                    <p>Asal universitas :${institusi}</p>
+                    <p>Total Tagihan : ${harga}</p>
+                    <p>Metode Pembayaran : ${bayar}</p>
+                    <button class="kirim" onclick="konfirmpembayaran()">Konfirmasi</button>
+                </div>
+                `;
+                countdownTimer();
+            }
+        }
+
+        else if(tim == 2){
+            pelatih1 =document.getElementById('pelatih1').value;
+            ketua1 = document.getElementById('ketua1').value;
+            if (pelatih1 =='' || ketua1 == ''){
+                alert("tanda * wajib diisi");
+            }
+            else{
+                if(pelatih1 != pelatih){
+                    alert("Universitas yg sama harus memilik pelatih yg sama");
+                }
+
+                else{
+                    alert("PENDAFTARAN BERHASIL!");
+                    document.getElementById("tombol").style.display="none";
+            
+                    // Tambahkan konten HTML ke dalam containertim
+                    containertim.innerHTML = `
+                    <div class="konfirm">
+                        <h2>KONFIRMASI PEMBAYARAN</h2>
+                        <h3 id="countdown"></h3>
+                        <p>Asal universitas :${institusi}</p>
+                        <p>Total Tagihan : ${harga}</p>
+                        <p>Metode Pembayaran : ${bayar}</p>
+                        <button class="kirim" onclick="konfirmpembayaran()">Konfirmasi</button>
+                    </div>
+                    `;
+                    countdownTimer()
+                }
+            }
+        }
+    }
+
+    var countdownInterval;
+
+    function countdownTimer() {
+    // Set waktu akhir hitung mundur (50 detik dari sekarang)
+        var countdownDate = new Date().getTime() + (50 * 1000);
+
+        function updateCountdown() {
+            // Dapatkan waktu saat ini
+            var now = new Date().getTime();
+
+            // Hitung sisa waktu
+            var timeRemaining = countdownDate - now;
+
+            // Hitung detik, menit, dan jam yang tersisa
+            var seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
+            var minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
+            var hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+
+            // Perbarui tampilan hitung mundur
+            document.getElementById("countdown").innerHTML = hours + ":" + minutes + ":" + seconds;
+
+            // Jika waktu habis, hentikan timer dan tampilkan peringatan
+            if (timeRemaining < 0) {
+                clearInterval(countdownInterval);
+                alert("Waktu Habis!, Silahkan lakukan pendaftaran ulang!");
+                status = "gagal";
+                let url = "tiketBVJ.html?nama= "+nama+"&institusi= "+institusi+"&bayar= "+bayar+"&harga= "+harga+ "&email1= "+email1+"&nama_acara=BVJ CUP"+"&harga= "+harga+"&status= "+status;
+                window.open(url,"_blank");
+                location.reload();
+            }
+        }
+        // Jalankan fungsi updateCountdown() setiap 1 detik
+        countdownInterval = setInterval(updateCountdown, 1000);
+    }
+
+    // Fungsi untuk menghentikan timer
+
+    function konfirmpembayaran(){
+        status = "berhasil";
+        if (ketua1 == undefined){
+            ketua1 = '-';
+        }
+        
+        clearInterval(countdownInterval);
+        document.getElementById("countdown").innerHTML = "Konfirmasi Berhasil";
+        document.getElementById("countdown").style.backgroundColor="green";
+        alert("Konfirmasi berhasil");
+        let url = "tiketBVJ.html?nama= "+nama+"&institusi= "+institusi+"&bayar= "+bayar+"&harga= "+harga+ "&email1= "+email1+"&nama_acara=BVJ CUP"+"&harga= "+harga+"&pelatih= "+pelatih+"&ketua= "+ketua+"&ketua1= "+ketua1+"&status= "+status;
+        window.open(url,"_blank");
+    }
+
+</script>
+</html> 

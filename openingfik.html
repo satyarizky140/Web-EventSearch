@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="form.css">
+    <script type="text/javascript" src="form1.js"></script>
+</head>
+
+<style>
+    * {
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: white;
+    padding: 10px;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    width: auto;
+    height: 60px;
+    padding: 0;
+    background-color: rgb(0, 132, 255);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+span{
+    color: red;
+}
+.kepala {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    height: 100%;
+}
+
+.logo {
+    flex: 2;
+}
+
+.logo:hover {
+    cursor: pointer;
+}
+
+.pn {
+    width: 50px;
+    border-radius: 50%;
+    border: 1px solid rgba(96, 120, 241, 0.497);
+    transition: transform 0.3s ease;
+}
+
+.pn:hover {
+    transform: rotate(360deg);
+}
+
+@keyframes animfik {
+    0% {
+        box-shadow: 0 0 0 0 rgba(96, 120, 241, 0.497);
+    }
+    50% {
+        box-shadow: 0 0 0 10px rgba(96, 120, 241, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(96, 120, 241, 0.497);
+    }
+}
+
+.fikfair {
+    margin-left: 280px;
+    width: 200px;
+    animation: animfik 3s infinite;
+}
+
+.button ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.button li {
+    margin-right: 20px;
+    padding: 8px 12px;
+    border-radius: 4px;
+    background-color: transparent;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.button li:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.button li.active {
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+.button a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.T1 {
+    margin: 20px auto;
+    max-width: 800px;
+    padding-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.info {
+    padding: 20px;
+}
+
+.event-title {
+    text-align: center;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.event-details {
+    margin-top: 20px;
+}
+
+.navinfo {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    padding: 0;
+}
+
+.navinfo li {
+    list-style: none;
+    margin-right: 10px;
+    padding: 8px 12px;
+    border-radius: 4px;
+    background-color: blue;
+    color: #ffffff;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.navinfo li.active {
+    background-color: grey;
+    color: #fff;
+}
+
+.description {
+    line-height: 1.6;
+}
+
+.event-info {
+    margin-bottom: 10px;
+}
+
+.syarat {
+    list-style: circle;
+    padding-left: 20px;
+}
+
+.registration-form {
+    padding: 20px;
+    background-color: #f5f5f5;
+    border-radius: 4px;
+}
+
+.form-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.bg1, .bg2 {
+    flex: 1;
+    margin-right: 20px;
+}
+
+.bg2 {
+    margin-right: 0;
+}
+
+table {
+    width: 100%;
+}
+
+td.input {
+    padding: 8px;
+}
+
+td.input input, td.input select {
+    width: 100%;
+    padding: 6px 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.email-note {
+    font-size: 12px;
+    color: #666;
+    margin-top: 4px;
+}
+
+.rad {
+    display: flex;
+    align-items: center;
+}
+
+.rd {
+    margin-right: 8px;
+}
+
+.kirim {
+    display: block;
+    margin: 0 auto;
+    padding: 10px 20px;
+    background-color: rgb(0, 132, 255);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.kirim:hover {
+    background-color: rgb(0, 107, 207);
+}
+</style>
+
+<header>
+    <div class="kepala">
+        <div class="logo">
+            <a href="Depan.html">
+                <img class="pn" src="logo.png" alt="">
+            </a>
+        </div>
+        <nav class="button">
+            <ul>
+                <li><a href="buat_event.html">Buat Event</a></li>
+                <li class="event"><a href="index.html">Event</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<body>
+    <main>
+        <section id="bagian1" class="bagian_1">
+            <table class="T1">
+                <tr>
+                    <td class="info">
+                        <h2 class="event-title">OPENING CEREMONY FIK FAIR</h2>
+
+                        <div class="imgfik">
+                            <img class="fikfair" src="fikfair.jpg" alt="">
+                        </div>
+
+                        <div class="event-details">
+                            <ul class="navinfo">
+                                <li id="info1" onclick="detail()" class="active">Deskripsi</li>
+                                <li id="info2" onclick="daftar()">Pendaftaran</li>
+                            </ul>
+
+                            <article id="art1" class="description">
+                                <h4>detail kegiatan :</h4>
+                                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laborum veritatis perferendis ipsum pariatur. Maxime, qui, fugit unde alias laboriosam nemo harum a omnis deserunt natus porro nisi. Sequi, ut at.</p>
+                                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestias, assumenda quaerat aliquid itaque nulla aliquam dolores autem vel voluptatem, corrupti at voluptas. Id, labore illum? Praesentium quas numquam atque minima.</p>
+                                <br>
+                                <p>Tunggu apa lagi? Segera daftarkan diri pada web ini!!!</p>
+
+                                <div class="event-info">
+                                    <h4>Jenis Kegiatan :</h4>
+                                    <p>Webinar</p>
+                                </div>
+
+                                <div class="event-info">
+                                    <h4>Tujuan kegiatan:</h4>
+                                    <p>Mencerdaskan Kehidupan Bangsa</p>
+                                </div>
+
+                                <div class="event-info">
+                                    <h4>Persyaratan :</h4>
+                                    <ol class="syarat">
+                                        <li>Mahasiswa Aktif</li>
+                                        <li>Semua Jurusan</li>
+                                    </ol>
+                                </div>
+                            </article>
+
+                            <div id="art2" class="registration-form" style="display:none">
+                                <h3>FORM PENDAFTARAN</h3>
+                                <p>*Isi data dibawah ini dengan benar, data ini digunakan untuk keperluan e-certificate</p>
+                                <div class="form-container">
+                                    <div class="bg1">
+                                        <table>
+                                            <tr>
+                                                <td class="input"><span>*</span><b>Nama</b></td>
+                                                <td class="input"><input type="text" id="input_nama"></td>
+                                            </tr>
+
+                                            <tr>
+                                                <td class="input"><b>Institusi</b></td>
+                                                <td class="input"><input type="text" id="institusi"></td>
+                                            </tr>
+
+                                            <tr>
+                                                <td class="input"><span>*</span><b>Email</b></td>
+                                                <td class="input"><input type="text" id="email_1"></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="input">
+                                                    <div>
+                                                        <span>*</span><b>Re-type Email</b>
+                                                    </div>
+                                                </td>
+                                                <td class="input">
+                                                    <input type="text" id="email_2">
+                                                    <p class="email-note"><i>enter an address where we can send an e-mail confirming your order</i></p>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                        
+                                    <div class="bg2">
+                                        <table>
+                                            <tr>
+                                                <td class="input"><span>*</span><b>Kota</b></td>
+                                                <td class="input"><input type="text" id="kota"></td>
+                                            </tr>
+                                   
+                                            <tr>
+                                                <td class="input"><b>Semester</b></td>
+                                                <td class="input"><input type="text" id="smt"></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="input"><b>Negara</b></td>
+                                                <td class="input">
+                                                    <select name="" id="">
+                                                        <option value="">Indonesia</option>
+                                                    </select>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="input"><span>*</span><b>Menyetujui Persyaratan?</b></td>
+                                                <td class="input">
+                                                    <label class="rad" for="" id="label">
+                                                        <input class="rd" class="in2" type="radio"  name="approval" value="y">Ya
+                                                        <input class="rd" type="radio" name="approval" id="no" checked>Tidak
+                                                    </label>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                                <button class="kirim" id="tombol" onclick="coba()">Submit</button>
+                            </div>
+                        </div>
+                    </td>   
+                </tr>
+            </table>
+        </section>
+    </main>
+</body>
+
+<script>
+
+</script>
+</html>

@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="form.css">
+</head>
+
+<header>
+    <div class="kepala">
+        <div class="logo">
+            <a href="Depan.html">
+                <img class="pn" src="logo.png" alt="">
+            </a>
+        </div>
+        <nav class="button">
+            <ul>
+                <li><a href="buat_event.html">Buat Event</a></li>
+                <li class="event"><a href="index.html">Event</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<body>
+    <main>
+        <section id="bagian1" class="bagian_1">
+            <table class="T1">
+                <tr>
+                    <td class="info">
+                        <h2 class="event-title">UI/UX DESIGN</h2>
+
+                        <div class="imgfik">
+                            <img class="fikfair" src="uiux.png" alt="">
+                        </div>
+
+                        <div class="event-details">
+                            <ul class="navinfo">
+                                <li id="info1" onclick="detail()" class="active">Deskripsi</li>
+                                <li id="info2" onclick="daftar()">Pendaftaran</li>
+                            </ul>
+
+                            <article id="art1" class="description">
+                                <h4>detail kegiatan :</h4>
+                                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laborum veritatis perferendis ipsum pariatur. Maxime, qui, fugit unde alias laboriosam nemo harum a omnis deserunt natus porro nisi. Sequi, ut at.</p>
+                                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestias, assumenda quaerat aliquid itaque nulla aliquam dolores autem vel voluptatem, corrupti at voluptas. Id, labore illum? Praesentium quas numquam atque minima.</p>
+                                <br>
+                                <p>Tunggu apa lagi? Segera daftarkan diri pada web ini!!!</p>
+
+                                <div class="event-info">
+                                    <h4>Jenis Kegiatan :</h4>
+                                    <p>Lomba Akademik</p>
+                                </div>
+
+                                <div class="event-info">
+                                    <h4>Tujuan kegiatan:</h4>
+                                    <p>Mencerdaskan Kehidupan Bangsa</p>
+                                </div>
+
+                                <div class="event-info">
+                                    <h4>Persyaratan :</h4>
+                                    <ol class="syarat">
+                                        <li>Mahasiswa Aktif</li>
+                                        <li>Semua Jurusan</li>
+                                        <li>Minimal semester 2</li>
+                                    </ol>
+                                </div>
+                            </article>
+
+                            <div id="art2" class="registration-form" style="display:none">
+                                <h3>FORM PENDAFTARAN</h3>
+                                <p>*Isi data dibawah ini dengan benar, data ini digunakan untuk keperluan e-certificate</p>
+                                <div class="form-container">
+                                    <div class="bg1">
+                                        <table>
+                                            <tr>
+                                                <td class="input"><span>*</span><b>Nama</b></td>
+                                                <td class="input"><input type="text" id="input_nama"></td>
+                                            </tr>
+
+                                            <tr>
+                                                <td class="input"><b>Institusi</b></td>
+                                                <td class="input"><input type="text" id="institusi"></td>
+                                            </tr>
+
+                                            <tr>
+                                                <td class="input"><span>*</span><b>Email</b></td>
+                                                <td class="input"><input type="text" id="email_1"></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="input">
+                                                    <div>
+                                                        <span>*</span><b>Re-type Email</b>
+                                                    </div>
+                                                </td>
+                                                <td class="input">
+                                                    <input type="text" id="email_2">
+                                                    <p class="email-note"><i>enter an address where we can send an e-mail confirming your order</i></p>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                        
+                                    <div class="bg2">
+                                        <table>
+                                            <tr>
+                                                <td class="input"><span>*</span><b>Kota</b></td>
+                                                <td class="input"><input type="text" id="kota"></td>
+                                            </tr>
+                                   
+                                            <tr>
+                                                <td class="input"><b>Semester</b></td>
+                                                <td class="input"><input type="text" id="smt"></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="input"><b>Negara</b></td>
+                                                <td class="input">
+                                                    <select name="" id="">
+                                                        <option value="">Indonesia</option>
+                                                    </select>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="input"><span>*</span><b>Menyetujui Persyaratan?</b></td>
+                                                <td class="input">
+                                                    <label class="rad" for="" id="label">
+                                                        <input class="rd" class="in2" type="radio"  name="approval" value="y">Ya
+                                                        <input class="rd" type="radio" name="approval" id="no" checked>Tidak
+                                                    </label>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                                <button class="kirim" id="tombol" onclick="coba()">Submit</button>
+                            </div>
+                        </div>
+                    </td>   
+                </tr>
+            </table>
+        </section>
+    </main>
+</body>
+
+<script>
+    function detail(){
+    const bagian1 = document.getElementById('art1');
+    const bagian2 = document.getElementById('art2');
+    const nav1 = document.getElementById('info1');
+    const nav2 = document.getElementById('info2');
+    bagian1.style.display="block";
+    bagian2.style.display="none";
+    nav1.style.backgroundColor="grey";
+    nav2.style.backgroundColor= "blue";
+}
+
+function daftar(){
+    const nav1 = document.getElementById('info1');
+    const nav2 = document.getElementById('info2');
+    const bagian1 = document.getElementById('art1');
+    const bagian2 = document.getElementById('art2');
+    bagian1.style.display="none";
+    bagian2.style.display="block";
+    nav1.style.backgroundColor="blue";
+    nav2.style.backgroundColor= "grey";
+}
+
+function coba(){
+    var nama = document.getElementById("input_nama").value;
+    var institusi = document.getElementById("institusi").value;
+    var email1 = document.getElementById("email_1").value;
+    var email2 = document.getElementById("email_2").value;
+    var kota = document.getElementById("kota").value;
+    var semester = document.getElementById("smt").value;
+    var setuju = document.getElementById("no");
+    var nama_acara = "OPENING CEREMONY FIKFAIR";
+    var harga = 0;
+
+    if (nama == '' || kota == '' || email1 ==''){
+        alert("tanda * wajib diisi");
+    }
+    
+    else{
+        if (email1 != email2){
+            alert("email harus sama!");
+        }
+
+        else{
+            if (setuju.checked){
+                alert("anda harus menyetujui persyaratan");
+            }
+
+            else{
+                if (semester < 2){
+                    alert("Syarat pendaftaran adalah Minimal semester 2");
+                }
+                else{
+                    alert("PENDAFTARAN BERHASIL!");
+                    let url = "tiket.html?nama=" + nama +
+                            "&institusi=" + institusi +
+                            "&email1=" + email1 +
+                            "&kota=" + kota +
+                            "&nama_acara= Lomba UI/UX Design " +
+                            "&harga=" + harga;
+                    window.open(url,"_blank");
+                    document.getElementById("tombol").innerHTML="lihat";
+                }
+            }
+        }
+    }
+}
+
+
+</script>
+</html>

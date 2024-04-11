@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9, user-scalable=no">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="Untitled-1.js"></script>
+</head>
+
+<style>
+    /* Mengatur font untuk seluruh elemen */
+* {
+    font-family: 'Roboto', sans-serif;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Mengatur margin dan padding untuk body */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #f7f7f7;
+}
+
+/* Mengatur header */
+/* Mengatur header */
+/* Header Styles */
+header {
+  background-color: #0084ff;
+  height: 50px;
+  padding: 10px 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo img {
+    width: 120px;; /* Mengecilkan ukuran logo */
+}
+
+nav ul {
+  display: flex;
+  list-style-type: none;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+nav ul li:hover {
+  color: #000;
+}
+
+nav ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+nav ul li a.active {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Animasi logo */
+@keyframes logoAnim {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1); /* Mengecilkan skala animasi */
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.pn {
+    animation: logoAnim 2s infinite;
+}
+
+/* Mengatur konten utama */
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Mengatur bagian atas */
+.atas {
+    display: flex;
+    padding-left: 15px;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.perjanjian {
+    background-color: #0084ff;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease-in-out;
+}
+
+.perjanjian:hover {
+    background-color: #0062c4;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Mengatur kotak pencarian */
+/* Mengatur kotak pencarian */
+.frame-499-search-bar-4 {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 5px 10px;
+    max-width: 300px; /* Membatasi lebar maksimum */
+    margin: 0 auto 20px; /* Menengahkan search bar */
+}
+
+.frame-499-search-bar-4 input {
+    border: none;
+    outline: none;
+    flex: 1;
+    padding: 5px;
+    font-size: 14px; /* Mengecilkan ukuran font input */
+    background-color: white;
+}
+
+.vector {
+    margin-right: 10px;
+    width: 18px; /* Mengecilkan ukuran ikon pencarian */
+    height: 18px;
+}
+
+.search-button {
+    display: flex;
+    align-items: center;
+    margin-left: 610px;
+    margin-top: -55px; /* Menggeser tombol cari ke atas */
+}
+
+.search-button button {
+    background-color: #0084ff;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    font-size: 14px;
+}
+
+.search-button button:hover {
+    background-color: #0062c4;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Mengatur slider kategori */
+/* Mengatur kategori acara */
+.split {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.split > p {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.silder {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.silder > div {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    max-width: 150px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.silder > div:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px);
+}
+
+.silder img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.silder p {
+    margin: 0;
+    font-weight: 600;
+}
+
+/* Mengatur daftar acara */
+.content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 3fr));
+    grid-gap: 20px;
+    justify-content: center; /* Mengatur perataan horizontal */
+    align-items: center; /* Mengatur perataan vertikal */
+}
+
+.acara1,
+.acara2,
+.acara3,
+.acara4{
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.acara4 {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    display: block; /* Ubah dari flex */
+    margin: 0 auto; /* Menengahkan secara horizontal */
+    flex-direction: column;
+}
+
+.acara1 img,
+.acara2 img,
+.acara3 img,
+.acara4 img {
+    max-width: 80px; /* Mengecilkan ukuran gambar */
+    height: auto;
+    margin-bottom: 10px;
+    align-self: center; /* Mengatur gambar di tengah */
+}
+
+.acara4 img {
+    max-width: 80px; /* Mengecilkan ukuran gambar */
+    height: auto;
+    margin-bottom: 10px;
+    margin-left: 130px;
+    justify-content: center; /* Mengatur gambar di tengah */
+}
+
+.about {
+    margin-bottom: 10px;
+    text-align: center; /* Mengatur teks deskripsi di tengah */
+}
+
+.detail {
+    margin-top: 10px;
+    text-align: justify; /* Mengatur teks detail di tengah dan rata kanan-kiri */
+}
+
+.buttondetail {
+    display: flex;
+    justify-content: center; /* Mengatur tombol di tengah */
+    margin-top: 20px;
+}
+
+.buttondetail button {
+    background-color: #0084ff;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    font-size: 14px; /* Mengecilkan ukuran font tombol */
+}
+
+.buttondetail button:hover {
+    background-color: #0062c4;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+</style>
+
+<header>
+    <div class="navbar">
+      <div class="logo">
+        <a href="Depan.html">
+          <img src="logo.png" alt="Logo">
+        </a>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="buat_event.html">Buat Event</a></li>
+          <li><a href="index.html">Event</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+<body>
+    <div>
+        <div class="atas">
+            <div class="judul">
+                <h2>Event</h2>
+                <p >looking for interesting events</p>
+            </div>
+        </div>
+        
+        <div class="frame-499-search-bar-4">
+            <form action="" id="search">
+                <input id="masukan" type="text" required placeholder="Cari dengan huruf kapital"/>
+            </form>
+            
+            <svg class="vector" width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M22.0089 23L13.2177 14.2099C12.5157 14.8079 11.7085 15.2706 10.7959 15.5982C9.88342 15.9257 8.9662 16.0895 8.04431 16.0895C5.79621 16.0895 3.89347 15.3113 2.33608 13.7551C0.778693 12.1979 0 10.2958 0 8.04895C0 5.80206 0.777757 3.89907 2.33327 2.34001C3.88972 0.780002 5.79153 0 8.0387 0C10.2868 0 12.1905 0.778599 13.7497 2.3358C15.309 3.89299 16.0886 5.79597 16.0886 8.04474C16.0886 9.01986 15.9159 9.96363 15.5706 10.876C15.2243 11.7885 14.7704 12.5689 14.2088 13.2175L23 22.0062L22.0074 23H22.0089ZM8.04431 14.6843C9.90681 14.6843 11.4796 14.0433 12.7628 12.7612C14.045 11.4792 14.6861 9.90654 14.6861 8.04333C14.6861 6.18106 14.045 4.60889 12.7628 3.32682C11.4806 2.04476 9.90822 1.40372 8.04572 1.40372C6.18322 1.40372 4.61039 2.04476 3.32723 3.32682C2.04501 4.60889 1.40389 6.18106 1.40389 8.04333C1.40389 9.90561 2.04501 11.4778 3.32723 12.7598C4.60945 14.0419 6.18181 14.6843 8.04431 14.6843Z" fill="#A7A0A0"/>
+            </svg>
+        </div>
+
+        <div class="search-button" style="margin-left: 57vw; top:-100px;">
+            <button onclick="tampil()">cari</button>
+        </div>
+        
+    </div>
+
+    <main>
+        <section id="seks">
+            <div class="content" id="cnt">
+                <div class="acara1" id="acr1">
+                    <img class="fikfair" src="fikfair.jpg" alt=""><br>
+                    
+                    <div class="about">
+                        <h3>OPENING CEREMONY FIK FAIR</h3>
+                        <p>Biaya : FREE</p>
+                        <p>Peserta : Umum</p>
+                        <P>Kategori : Webinar</P>
+                        <p>Lokasi : Online</p>
+                    </div>
+    
+                    <div class="detail">
+                        <h5>Tentang Acara : </h5>
+                        <p>Lorem ipsum dolor sit amet consectetur, 
+                            adipisicing elit. Aperiam voluptate, omnis itaque magni 
+                            minima vitae, quasi natus voluptas unde, error suscipit 
+                            quibusdam ducimus expedita illo tempore? Delectus 
+                            dolorem vitae vel.</p>
+                        
+                        <div class="buttondetail">
+                            <button><a href="openingfik.html">Lihat Detail</a></button>
+                        </div>
+                    </div>
+                </div>
+    
+                <div id="acr2">
+                    <div class="acara2">
+                        <img src="BVJ.jpeg" alt=""> <br>
+                        <div class="about">
+                            <h3>BVJ CUP 2023</h3>
+                            <p>Biaya : Rp 120.000,00/tim</p>
+                            <p>Peserta : Mahasiswa aktif</p>
+                            <p>Kategori : Lomba non-akademik</p>
+                            <p>Lokasi : UPNVJ / JAKARTA</p>
+                        </div>
+        
+                        <div class="detail">
+                            <h5>Tentang Acara</h5>
+                            <p style="display: block;">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                                Labore, mollitia! Ab, cumque, voluptates id quisquam praesentium magnam 
+                                laboriosam officia mollitia cum tempore excepturi, voluptatum dolorum impedit culpa 
+                                accusantium ea? Nihil.</p>
+                                
+                            <div class="buttondetail">
+                                <button><a href="bvj.html">Lihat Detail</a></button>
+                            </div> <br>
+                        </div>
+                    </div>
+                    <br>
+                </div>
+    
+                <div id="acr3">
+                    <div class="acara3">
+                        <img src="fikfair.jpg" alt=""> <br>
+                        <div class="about">
+                            <h3>UI/UX DESIGN</h3>
+                            <p>Biaya : FREE</p>
+                            <p>Peserta : Mahasiswa aktif</p>
+                            <p>Kategori : Lomba Akademik</p>
+                            <p>Lokasi : Online</p>
+                        </div>
+        
+                        <div class="detail">
+                            <h5>Tentang Acara</h5>
+                            <p style="display: block;">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                                Labore, mollitia! Ab, cumque, voluptates id quisquam praesentium magnam 
+                                laboriosam officia mollitia cum tempore excepturi, voluptatum dolorum impedit culpa 
+                                accusantium ea? Nihil.</p>
+                                
+                            <div class="buttondetail">
+                                <button><a href="uiux.html">Lihat Detail</a></button>
+                            </div>
+                            <br>
+                        </div>
+                    </div>
+                </div> <br>
+    
+                <div id="acr4">
+                    <div class="acara4">
+                        <img src="slash.jpeg" alt=""> <br>
+                        <div class="about">
+                            <h3>ESSAY COMPETITION</h3>
+                            <p>Biaya : FREE</p>
+                            <p>Peserta : Mahasiswa aktif</p>
+                            <p>Kategori : Lomba Akademik</p>
+                            <p>Lokasi : Online</p>
+                        </div>
+        
+                        <div class="detail">
+                            <h5>Tentang Acara</h5>
+                            <p style="display: block;">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                                Labore, mollitia! Ab, cumque, voluptates id quisquam praesentium magnam 
+                                laboriosam officia mollitia cum tempore excepturi, voluptatum dolorum impedit culpa 
+                                accusantium ea? Nihil.</p>
+                                
+                            <div class="buttondetail">
+                                <button><a href="essay.html">Lihat Detail</a></button>
+                            </div>
+                            <br>
+                        </div> <br>
+                    </div> 
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

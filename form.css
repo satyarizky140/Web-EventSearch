@@ -1,0 +1,226 @@
+* {
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: white;
+    padding: 10px;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    width: auto;
+    height: 60px;
+    padding: 0;
+    background-color: rgb(0, 132, 255);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+span{
+    color: red;
+}
+.kepala {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    height: 100%;
+}
+
+.logo {
+    flex: 2;
+}
+
+.logo:hover {
+    cursor: pointer;
+}
+
+.pn {
+    width: 50px;
+    border-radius: 50%;
+    border: 1px solid rgba(96, 120, 241, 0.497);
+    transition: transform 0.3s ease;
+}
+
+.pn:hover {
+    transform: rotate(360deg);
+}
+
+@keyframes animfik {
+    0% {
+        box-shadow: 0 0 0 0 rgba(96, 120, 241, 0.497);
+    }
+    50% {
+        box-shadow: 0 0 0 10px rgba(96, 120, 241, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(96, 120, 241, 0.497);
+    }
+}
+
+.fikfair {
+    margin-left: 280px;
+    width: 200px;
+    animation: animfik 3s infinite;
+}
+
+.button ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.button li {
+    margin-right: 20px;
+    padding: 8px 12px;
+    border-radius: 4px;
+    background-color: transparent;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.button li:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.button li.active {
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+.button a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.T1 {
+    margin: 20px auto;
+    max-width: 800px;
+    padding-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.info {
+    padding: 20px;
+}
+
+.event-title {
+    text-align: center;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.event-details {
+    margin-top: 20px;
+}
+
+.navinfo {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    padding: 0;
+}
+
+.navinfo li {
+    list-style: none;
+    margin-right: 10px;
+    padding: 8px 12px;
+    border-radius: 4px;
+    background-color: blue;
+    color: #ffffff;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.navinfo li.active {
+    background-color: grey;
+    color: #fff;
+}
+
+.description {
+    line-height: 1.6;
+}
+
+.event-info {
+    margin-bottom: 10px;
+}
+
+.syarat {
+    list-style: circle;
+    padding-left: 20px;
+}
+
+.registration-form {
+    padding: 20px;
+    background-color: #f5f5f5;
+    border-radius: 4px;
+}
+
+.form-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.bg1, .bg2 {
+    flex: 1;
+    margin-right: 20px;
+}
+
+.bg2 {
+    margin-right: 0;
+}
+
+table {
+    width: 100%;
+}
+
+td.input {
+    padding: 8px;
+}
+
+td.input input, td.input select {
+    width: 100%;
+    padding: 6px 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.email-note {
+    font-size: 12px;
+    color: #666;
+    margin-top: 4px;
+}
+
+.rad {
+    display: flex;
+    align-items: center;
+}
+
+.rd {
+    margin-right: 8px;
+}
+
+.kirim {
+    display: block;
+    margin: 0 auto;
+    padding: 10px 20px;
+    background-color: rgb(0, 132, 255);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.kirim:hover {
+    background-color: rgb(0, 107, 207);
+}
